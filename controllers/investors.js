@@ -3,6 +3,7 @@
  * @author Shuja Naqvi
  */
 const Investors = require("../models/Investors");
+const Projects = require("../models/Projects");
 
 /**
  * Create Investor - Signup
@@ -95,6 +96,43 @@ exports.delete = async (req, res) => {
     const investorId = req.params.investorId; // Getting investor id from URL parameter
     const investor = await Investors.findByIdAndDelete(investorId); // Deleting the investor
     res.json({ success: true, investor }); // Success
+  } catch (err) {
+    // Error handling
+    console.log("Error ----> ", err);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
+/**
+ * Assign shares to investor
+ * @param {object} req
+ * @param {object} res
+ */
+exports.assignShare = async (req, res) => {
+  try {
+    const investorId = req.params.investorId; // Getting investor id from URL parameter
+    const existingproject = await Projects.findById(req.body.projects.project);
+    if (existingproject.remaining_shares < req.body.projects.shares) {
+      return res.json({
+        success: false,
+        message: "You dont have as much remaining shares for this project",
+      });
+    }
+    const investor = await Investors.findByIdAndUpdate(investorId, req.body, {
+      new: true,
+    }); // update the investor
+    req.body.investors = {
+      investor: investorId,
+      shares: req.body.projects.shares,
+    };
+    req.body.remaining_shares =
+      existingproject.remaining_shares - req.body.projects.shares;
+    const project = await Projects.findByIdAndUpdate(
+      req.body.projects.project,
+      req.body,
+      { new: true }
+    );
+    res.json({ success: true, investor, project }); // Success
   } catch (err) {
     // Error handling
     console.log("Error ----> ", err);

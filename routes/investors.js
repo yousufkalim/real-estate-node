@@ -30,6 +30,8 @@ router.put(
   isValidated,
   investors.update
 ); // Update a specific investor by it's id
+//Assign share to investor
+router.put("/shares/:investorId", investors.assignShare);
 // Delete
 router.delete("/:investorId", investors.delete); // delete a investor user by it's id
 

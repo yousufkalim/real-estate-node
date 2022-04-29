@@ -19,6 +19,7 @@ const projectSchema = new Schema(
     end_date: Date,
     total_cost: Number,
     total_shares: Number,
+    remaining_shares: Number,
     date: {
       type: Date,
       default: Date.now,
@@ -30,6 +31,27 @@ const projectSchema = new Schema(
       total_cost: Number,
       total_shares: Number,
     },
+    news: {
+      comment: String,
+      new_selling_price: Number,
+      news_date: Date,
+      new_end_date: Date,
+      new_total_cost: Number,
+      pictures: [
+        {
+          file: String,
+        },
+      ],
+    },
+    investors: [
+      {
+        investor: {
+          type: Schema.Types.ObjectId,
+          ref: "investors",
+        },
+        shares: Number,
+      },
+    ],
   },
   {
     timestamps: true,
