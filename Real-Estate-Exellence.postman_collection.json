@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "d04a4c95-6a4a-4a77-8471-83626c500949",
+		"name": "Real-Estate-Exellence",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Investors",
+			"item": [
+				{
+					"name": "Create Investor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"phone\":\"+923127378945\",\"email\":\"shujanaqvi288@gmail.com\",\"password\":\"12345678\",\"first_name\":\"Shuja\",\"last_name\":\"Naqvi\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/investors/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"investors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all investors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/investors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"investors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Investor By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/investors/626120c15625891b0ff4b6d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"investors",
+								"626120c15625891b0ff4b6d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Investor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"first_name\":\"shuja\",\"last_name\":\"naqvi\",\"email\":\"shuja@gmail.com\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/investors/626120c15625891b0ff4b6d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"investors",
+								"626120c15625891b0ff4b6d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Investor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/investors/626108c17904be10136c53df",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"investors",
+								"626108c17904be10136c53df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Shares",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"projects\":{\"shares\":\"24\",\"project\":\"6265e20596c35f6fbb711134\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/investors/shares/626120c15625891b0ff4b6d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"investors",
+								"shares",
+								"626120c15625891b0ff4b6d3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Otp",
+			"item": [
+				{
+					"name": "Create Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"phone\":\"+3127378945\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/otps",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"otps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify otp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"phone\":\"+923127378945\",\"Otp\": 516741}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/otps",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"otps"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"phone\":\"+923127378945\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Create projects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "plot1 :RT053",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "lahore",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2022-04-22",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2022-04-24",
+									"type": "text"
+								},
+								{
+									"key": "total_cost",
+									"value": "22000",
+									"type": "text"
+								},
+								{
+									"key": "selling_price",
+									"value": "24000",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/projects/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL PROJECTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/projects/6265e20596c35f6fbb711134",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects",
+								"6265e20596c35f6fbb711134"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-news",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"projectId\":\"6265e20596c35f6fbb711134\",\"news\":{\"comment\":\"this is my first news\",\"new_end_date\":\"01/05/2022\",\"news_date\":\"12/04/2022\",\"new_selling_price\":\"2900\",\"new_total_cost\":\"2400\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/projects/news",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"projectId\":\"6265e20596c35f6fbb711134\",\"end_date\":\"12/16/2023\",\"total_cost\":\"7000\",\"total_shares\":\"102\",\"selling_price\":\"4800\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/projects/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -3,7 +3,7 @@
  * @author Yousuf Kalim
  */
 const jwt = require("jsonwebtoken");
-const tokenSecret = process.env.JWT_SECRET;
+const tokenSecret = "xvj*ijxxEv7o7ekvFnEtxJa2";
 
 // Check auth
 exports.checkAdminAuth = (req, res, next) => {
@@ -22,6 +22,7 @@ exports.checkAdminAuth = (req, res, next) => {
     // Decrypting token
     const token = header.split(" ")[1];
     const decoded = jwt.verify(token, tokenSecret);
+
     req.admin = decoded.admin;
     req.token = token;
 

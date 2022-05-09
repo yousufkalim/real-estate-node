@@ -15,7 +15,13 @@ exports.login = async (req, res) => {
     const { phone } = req.body;
     // Getting user from db
     let otp = await OTPs.findOne({ phone }); //find otp by id
-    if (otp.is_verified === true) {
+    if (!otp) {
+      return res.json({
+        success: false,
+        message: "Phone Number is not exist",
+      }); // done
+    }
+    if (otp?.is_verified === true) {
       return res.json({
         success: true,
         message: "Successfully logged in",

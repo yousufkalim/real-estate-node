@@ -5,7 +5,7 @@
 const Admins = require("../models/Admins");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const tokenSecret = process.env.JWT_SECRET;
+const tokenSecret = "xvj*ijxxEv7o7ekvFnEtxJa2";
 const bcryptSalt = process.env.BCRYPT_SALT || 10;
 
 /**
